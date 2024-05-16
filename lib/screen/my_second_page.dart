@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-import 'my_second_page.dart';
+import 'my_home_page.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class MySecondPage extends StatelessWidget {
+  const MySecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +21,14 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text("Home Page", style: TextStyle(fontSize: 40, color: Colors.red),),
+            const Text("Second Page", style: TextStyle(fontSize: 40, color: Colors.purple),),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(
+                Navigator.of(context).pop(
                   MaterialPageRoute(
-                    builder: (context) => const MySecondPage()
+                    builder: (context) => const MyHomePage()
                     ));
-              }, child: const Text("Next Page ->>"),),
+              }, child: const Text("Home Page"),),
           ],
         )
       ),
